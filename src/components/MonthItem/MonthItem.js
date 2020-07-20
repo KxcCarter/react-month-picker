@@ -7,7 +7,7 @@ class MonthItem extends Component {
 
   render() {
     return (
-      <div onClick={this.clickAlert}>
+      <div onClick={(event) => this.props.setMonthHeader(this.props.name)}>
         <h3>{this.props.name}</h3>
       </div>
     );
