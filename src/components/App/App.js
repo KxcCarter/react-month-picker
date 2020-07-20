@@ -7,7 +7,11 @@ import Header from '../Header/Header';
 class App extends Component {
   state = {
     calendar: [],
-    monthHeader: null,
+    monthHeader: 'Click on a month!',
+    selectedMonth: {
+      name: '',
+      id: '',
+    },
   };
 
   componentDidMount() {
@@ -28,9 +32,10 @@ class App extends Component {
       });
   };
 
-  setMonthHeader = (name) => {
+  setMonthHeader = (monthData) => {
     this.setState({
-      monthHeader: name,
+      monthHeader: monthData.name,
+      selectedMonth: monthData,
     });
   };
 
@@ -39,7 +44,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Select a Month</h1>
-          <Header month={this.state.monthHeader} />
+          <Header month={this.state.monthHeader} fullData={this.state.selectedMonth} />
           <br />
         </header>
         <br />

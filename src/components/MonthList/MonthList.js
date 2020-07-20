@@ -5,7 +5,12 @@ class MonthList extends Component {
   render() {
     const displayMonth = this.props.months.map((item) => {
       return (
-        <MonthItem key={item.id} name={item.name} setMonthHeader={this.props.setMonthHeader} />
+        <MonthItem
+          key={item.id}
+          tracker={item}
+          name={item.name}
+          setMonthHeader={this.props.setMonthHeader}
+        />
       );
     });
     return <div>{displayMonth}</div>;
