@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import MonthItem from '../MonthItem/MonthItem';
+import MonthList from '../MonthList/MonthList';
 
 class App extends Component {
   state = {
@@ -36,7 +36,7 @@ class App extends Component {
         </header>
         <br />
         <p>List of months goes here</p>
-        <MonthItem month={this.state.calendar} />
+        <MonthList months={this.state.calendar} />
       </div>
     );
   }

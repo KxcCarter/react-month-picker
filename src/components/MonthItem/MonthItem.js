@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
 class MonthItem extends Component {
-  render() {
-    const displayMonth = this.props.month.map((month) => {
-      return <h3>{month.name}</h3>;
-    });
+  clickAlert = () => {
+    alert(`Selected month is ${this.props.name}`);
+  };
 
+  render() {
     return (
-      <div>
-        {displayMonth}
-        <p>MONTH ITEM STUFF!</p>
+      <div onClick={this.clickAlert}>
+        <h3>{this.props.name}</h3>
       </div>
     );
   }
